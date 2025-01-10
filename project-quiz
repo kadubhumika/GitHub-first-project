@@ -1,1 +1,57 @@
-HELLO THIS IS MY QUIZ PROJECT 
+
+#include<stdio.h>
+int main() {
+	int answer;
+	int score =0;
+	printf("Lets test your basic coding knowlegde !");
+	printf("ARE you excited for Quiz!! \n Get Ready!!! ");
+	printf("Que 1st. What is the time complexity of searching for an element in an unsorted array of size n?");
+	printf("1.O(1) \n 2.O(n) \n 3.O(logn) \n 4. O(nsq) \n ");
+	printf("Enter your ans between (1-4) : %d ",answer);
+	if(answer == 2){
+		printf(" yeah!! Its correct ! ");
+		score++;
+	}
+	
+	else {
+		printf("Invalid option better luck !");
+	}
+	
+	printf("Are you excited for next quetion");
+	printf("Que 2nd . Given an array of numbers, an inversion is a pair of elements (a,b)such that a>b and a comes before b.\n what is the most efficent way to count the number of inversion in an array");
+	printf("1.Brute forced by checking each pair \n 2.Using merge sort algorithm \n 3.Using quicksort algorithm \n 4.Using dyanamic programming \n");
+	printf("Enter your answer between (1-4) : %d",answer);
+	if(answer == 2){
+		printf(" yeah!! Its correct ! ");
+		score++;
+	}
+	
+	else {
+		printf("Invalid option better luck !");
+	}
+	printf("Que 3. Given a list of integers, write a function to determine if there exists a subset whose sum equals a given target value.\n def subset_sum(arr: List[int], target: int) -> bool:");
+	printf("1. Use a dynamic programming approach where each index keeps track of whether a subset sum is achievable.\n 2. Use a brute-force method to generate all subsets and check their sums.\n 3. Sort the array and use a greedy algorithm to find the subset sum.\n 4. Use recursion to explore all possible sums and check if any match the target.");
+	printf("Enter your ans : %d ",answer);
+	if(answer == 1){
+		printf(" yeah!! Its correct ! ");
+		score++;
+	}
+	
+	else {
+		printf("Invalid option better luck !");
+	}
+	printf("lets go for next que ");
+	printf("Que 4th.You are tasked with finding the longest subsequence in an array that is strictly increasing. \n Write a function that returns the length of the longest increasing subsequence (LIS).");
+	printf("1. Use a dynamic programming approach with an array where each element represents the length of the longest subsequence ending at that index.\n 2. Use a brute force method to generate all subsequences and find the longest one that is increasing.\n 3. Sort the array and count how many elements are in increasing order.\n 4. Use a recursive approach with memoization to find the LIS from each index.");
+	printf("Enter your answer : %d ",answer);
+	if(answer == 1){
+		printf(" yeah!! Its correct ! ");
+		score++;
+	}
+	
+	else {
+		printf("Invalid option better luck !");
+	}
+	printf("Your final score is : %d/4\n",score);
+    return 0;
+}

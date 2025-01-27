@@ -1,0 +1,81 @@
+import java.util.Scanner;
+
+public class WordToNumber {
+    
+    // Function to convert a word to a corresponding number
+    public static int wordToNumber(String word) {
+        switch (word) {
+            case "Zero": return 0;
+            case "One": return 1;
+            case "Two": return 2;
+            case "Three": return 3;
+            case "Four": return 4;
+            case "Five": return 5;
+            case "Six": return 6;
+            case "Seven": return 7;
+            case "Eight": return 8;
+            case "Nine": return 9;
+            case "Ten": return 10;
+            case "Eleven": return 11;
+            case "Twelve": return 12;
+            case "Thirteen": return 13;
+            case "Fourteen": return 14;
+            case "Fifteen": return 15;
+            case "Sixteen": return 16;
+            case "Seventeen": return 17;
+            case "Eighteen": return 18;
+            case "Nineteen": return 19;
+            case "Twenty": return 20;
+            case "Thirty": return 30;
+            case "Forty": return 40;
+            case "Fifty": return 50;
+            case "Sixty": return 60;
+            case "Seventy": return 70;
+            case "Eighty": return 80;
+            case "Ninety": return 90;
+            case "Hundred": return 100;
+            case "Thousand": return 1000;
+            case "Million": return 1000000;
+            default: return -1;
+        }
+    }
+
+    // Function to convert a string of words to a number
+    public static int convertWordsToNumber(String str) {
+        String[] words = str.split(" "); // Split input string by spaces
+        int number = 0;
+        int tempNumber = 0;
+
+        for (String word : words) {
+            int value = wordToNumber(word);
+            if (value == -1) {
+                return -1; // Invalid word
+            }
+            if (value == 100) {
+                tempNumber *= 100; // Handle hundred multiplier
+            } else if (value == 1000 || value == 1000000) {
+                number += tempNumber * value;
+                tempNumber = 0;
+            } else {
+                tempNumber += value; // Add the value to tempNumber
+            }
+        }
+        number += tempNumber; // Add any remaining value in tempNumber
+        return number;
+    }
+
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Enter the number in words: ");
+        String str = scanner.nextLine();
+
+        int result = convertWordsToNumber(str);
+        if (result != -1) {
+            System.out.println("The number is: " + result);
+        } else {
+            System.out.println("Invalid input.");
+        }
+
+        scanner.close();
+    }
+}
